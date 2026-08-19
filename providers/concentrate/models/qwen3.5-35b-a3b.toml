@@ -1,0 +1,21 @@
+# Every route declares reasoning.effort.none, but live probes on 2026-08-19 returned
+# a full reasoning payload at `none` on repeated runs, so it does not disable
+# thinking on this relay and is deliberately not published as an off switch.
+# https://concentrate.ai/models/qwen3.5-35b-a3b
+base_model = "alibaba/qwen3.5-35b-a3b"
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.057
+output = 0.459
+
+[[cost.tiers]]
+tier = { type = "context", size = 128_000 }
+input = 0.229
+output = 1.835
+
+[modalities]
+input = ["text", "image", "pdf"]

@@ -1,0 +1,22 @@
+# Live probes on 2026-08-19 confirmed `none` returns an empty reasoning payload, so
+# thinking is genuinely off, while the graded levels return reasoning. The graded
+# values are the tiers Concentrate declares for this model, not measured budgets.
+# https://concentrate.ai/models/hy3
+base_model = "tencent/hy3"
+attachment = true
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.14
+output = 0.58
+cache_read = 0.035
+
+[limit]
+context = 262_144
+
+[modalities]
+input = ["text", "pdf"]
