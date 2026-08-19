@@ -1,0 +1,19 @@
+# Concentrate exposes no caller-selectable reasoning tier for this ID: every route
+# accepts only `high` on reasoning.effort, so there is a single value and therefore
+# no choice to publish. The model still reasons; `[]` records the absent control.
+# https://concentrate.ai/models/kimi-k2-thinking
+base_model = "moonshotai/kimi-k2-thinking"
+attachment = true
+structured_output = true
+reasoning_options = []
+
+[cost]
+input = 0.6
+output = 2.5
+cache_read = 0.15
+
+[limit]
+output = 98_304
+
+[modalities]
+input = ["text", "pdf"]

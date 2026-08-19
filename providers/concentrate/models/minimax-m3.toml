@@ -1,0 +1,21 @@
+# `none` is not published: only 2 of 4 routes accept it,
+# so it would be normalized away rather than disabling thinking. The graded values
+# are the tiers Concentrate declares for this model, not measured budgets.
+# https://concentrate.ai/models/minimax-m3
+base_model = "minimax/MiniMax-M3"
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.28
+output = 1.1
+cache_read = 0.056
+
+[limit]
+context = 1_000_000
+
+[modalities]
+input = ["text", "image", "pdf"]
