@@ -1,0 +1,17 @@
+# Live probes on 2026-08-19 confirmed `none` returns an empty reasoning payload on
+# repeated runs, so thinking is genuinely off. The graded values are the tiers
+# Concentrate declares for this model, not measured reasoning budgets.
+# https://concentrate.ai/models/kimi-k2-5
+base_model = "moonshotai/kimi-k2.5"
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.45
+output = 2.25
+cache_read = 0.07
+
+[modalities]
+input = ["text", "image", "pdf"]

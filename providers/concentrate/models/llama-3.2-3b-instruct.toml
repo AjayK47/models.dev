@@ -1,0 +1,14 @@
+# Concentrate reports max_input_tokens = 80_000 for this ID and its single cloudflare route reports the same window.
+# The override records the window this gateway actually serves, which differs
+# from the lab ceiling.
+# https://concentrate.ai/models/llama-3.2-3b-instruct
+base_model = "meta/llama-3.2-3b"
+tool_call = true
+structured_output = true
+
+[cost]
+input = 0.0509
+output = 0.335
+
+[limit]
+context = 80_000

@@ -1,0 +1,22 @@
+# Live probes on 2026-08-19 confirmed `none` returns an empty reasoning payload on
+# repeated runs, so thinking is genuinely off. The graded values are the tiers
+# Concentrate declares for this model, not measured reasoning budgets.
+# `xhigh` is accepted but not published: live probes on 2026-08-19 produced
+# 6_522-10_472 reasoning characters at high against 4_089-11_350 at xhigh, fully
+# overlapping, so the gateway normalizes it rather than honouring a higher tier.
+# https://concentrate.ai/models/nemotron-3-nano-30b
+base_model = "nvidia/nemotron-3-nano-30b-a3b"
+attachment = true
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "max"]
+
+[cost]
+input = 0.05
+output = 0.2
+cache_read = 0.025
+
+[modalities]
+input = ["text", "pdf"]

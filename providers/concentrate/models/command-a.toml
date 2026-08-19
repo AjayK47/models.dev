@@ -2,14 +2,14 @@
 # document server-side before dispatch, so the capability is the relay's rather than
 # the lab's. Verified on 2026-08-19 by sending a PDF to text-only-lab models
 # (qwen3-max, deepseek-v3-0324, glm-4.5), each of which returned its contents.
-base_model = "deepseek/deepseek-v3-0324"
+base_model = "cohere/command-a-03-2025"
 attachment = true
 structured_output = true
 
 [cost]
-input = 0.24
-output = 0.9
-cache_read = 0.135
+input = 2.5
+output = 10
+cache_read = 0
 
 [modalities]
 input = ["text", "pdf"]
