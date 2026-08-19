@@ -1,0 +1,37 @@
+# Concentrate accepts PDF input for every model it serves: the gateway extracts the
+# document server-side before dispatch, so the capability is the relay's rather than
+# the lab's. Verified on 2026-08-19 by sending a PDF to text-only-lab models
+# (qwen3-max, deepseek-v3-0324, glm-4.5), each of which returned its contents.
+base_model = "alibaba/qwen3-coder-flash"
+attachment = true
+tool_call = false
+structured_output = false
+
+[cost]
+input = 0.144
+output = 0.574
+cache_read = 0.029
+
+[[cost.tiers]]
+tier = { type = "context", size = 256_000 }
+input = 0.717
+output = 3.584
+cache_read = 0.144
+
+[[cost.tiers]]
+tier = { type = "context", size = 128_000 }
+input = 0.359
+output = 1.434
+cache_read = 0.072
+
+[[cost.tiers]]
+tier = { type = "context", size = 32_000 }
+input = 0.216
+output = 0.861
+cache_read = 0.044
+
+[limit]
+output = 64_000
+
+[modalities]
+input = ["text", "pdf"]
