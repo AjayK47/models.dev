@@ -1,0 +1,16 @@
+# Concentrate exposes no caller-selectable reasoning tier for this ID: every route
+# accepts only `high` on reasoning.effort, so there is a single value and therefore
+# no choice to publish. The model still reasons; `[]` records the absent control.
+# https://concentrate.ai/models/deepseek-r1
+base_model = "deepseek/deepseek-r1"
+attachment = true
+tool_call = false
+structured_output = false
+reasoning_options = []
+
+[cost]
+input = 1.35
+output = 5.4
+
+[modalities]
+input = ["text", "pdf"]
