@@ -129,6 +129,33 @@ const BASE_MODEL_ALIASES: Record<string, string> = {
   "grok-4.20-non-reasoning": "xai/grok-4.20-0309-non-reasoning",
   "deepseek-v3-1": "deepseek/deepseek-v3.1",
   "deepseek-v4-flash-0423": "deepseek/deepseek-v4-flash",
+  // Same model, where the canonical ID carries a parameter count, a release
+  // date, or lab casing that Concentrate's stable alias drops. Each pairing was
+  // confirmed by the canonical entry's own name and release_date matching the
+  // values Concentrate reports for the ID.
+  "command-a": "cohere/command-a-03-2025",
+  "command-a-vision": "cohere/command-a-vision-07-2025",
+  "devstral-2": "mistral/devstral-2512",
+  "kimi-k2-5": "moonshotai/kimi-k2.5",
+  "kimi-k2-6": "moonshotai/kimi-k2.6",
+  "kimi-k2-7-code": "moonshotai/kimi-k2.7-code",
+  "llama-3.2-1b-instruct": "meta/llama-3.2-1b",
+  "llama-3.2-3b-instruct": "meta/llama-3.2-3b",
+  "llama-4-maverick": "meta/llama-4-maverick-17b-instruct",
+  "llama-4-scout": "meta/llama-4-scout-17b-instruct",
+  "minimax-m2-1": "minimax/MiniMax-M2.1",
+  "minimax-m2-5": "minimax/MiniMax-M2.5",
+  "minimax-m2-5-highspeed": "minimax/MiniMax-M2.5-highspeed",
+  "minimax-m2-7": "minimax/MiniMax-M2.7",
+  "minimax-m2-7-highspeed": "minimax/MiniMax-M2.7-highspeed",
+  "mistral-large-3": "mistral/mistral-large-2512",
+  "mistral-medium-3": "mistral/mistral-medium-2505",
+  "mistral-small-3.1": "mistral/mistral-small-3-1-24b-instruct-2503",
+  "mistral-small-3.2": "mistral/mistral-small-2506",
+  "nemotron-3-nano-30b": "nvidia/nemotron-3-nano-30b-a3b",
+  "nemotron-3-nano-omni": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+  "qwen3.6-35b": "alibaba/qwen3.6-35b-a3b",
+  "step-3-7-flash": "stepfun/step-3.7-flash",
 };
 
 // A few catalog entries advertise routes that do not serve normal traffic, so

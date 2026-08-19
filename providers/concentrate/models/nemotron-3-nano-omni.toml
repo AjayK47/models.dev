@@ -1,0 +1,21 @@
+# Live probes on 2026-08-19 confirmed `none` returns an empty reasoning payload on
+# repeated runs, so thinking is genuinely off. The graded values are the tiers
+# Concentrate declares for this model, not measured reasoning budgets.
+# https://concentrate.ai/models/nemotron-3-nano-omni
+base_model = "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high"]
+
+[cost]
+input = 0.3
+output = 1.83
+cache_read = 0.3
+
+[limit]
+context = 262_144
+
+[modalities]
+input = ["text", "image"]

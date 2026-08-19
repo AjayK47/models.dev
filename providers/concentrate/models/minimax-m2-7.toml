@@ -1,0 +1,19 @@
+# `none` is not published: the list capabilities do not declare it, so it would be
+# normalized away rather than disabling thinking. The graded values are the tiers
+# Concentrate declares for this model, not measured reasoning budgets.
+# https://concentrate.ai/models/minimax-m2-7
+base_model = "minimax/MiniMax-M2.7"
+attachment = true
+structured_output = false
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.25
+output = 1
+cache_read = 0.05
+
+[modalities]
+input = ["text", "pdf"]

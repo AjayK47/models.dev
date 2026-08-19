@@ -1,0 +1,17 @@
+# Concentrate reports max_input_tokens = 327_680 for this ID and its deepinfra route reports the same window, while the cloudflare,
+# bedrock and novita routes cap lower at roughly 131k.
+# The override records the window this gateway actually serves, which differs
+# from the lab ceiling.
+# https://concentrate.ai/models/llama-4-scout
+base_model = "meta/llama-4-scout-17b-instruct"
+structured_output = true
+
+[cost]
+input = 0.1
+output = 0.3
+
+[limit]
+context = 327_680
+
+[modalities]
+input = ["text", "image", "pdf"]
