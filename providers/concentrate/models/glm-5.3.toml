@@ -1,0 +1,24 @@
+# Concentrate normalizes `reasoning_effort` over Z.ai's thinking API. Live probes
+# on 2026-08-19 confirmed this model always reasons; no route-wide off switch is exposed,
+# while every graded level returns reasoning. Repeated runs did not show a stable
+# ordering between the graded levels, so they are published as the tiers this
+# gateway accepts rather than as measured reasoning budgets.
+# `max` is published although the list capabilities omit it: the zai route declares
+# reasoning.effort.max = true and established peers publish it for this model.
+# `none` and `medium` are omitted although peers publish them: the zai route that
+# serves this ID declares only low, high and max on reasoning.effort.
+# https://concentrate.ai/models/glm-5.3
+base_model = "zhipuai/glm-5.3"
+structured_output = false
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "high", "max"]
+
+[cost]
+input = 1.4
+output = 4.4
+cache_read = 0.26
+
+[limit]
+context = 1_048_576
