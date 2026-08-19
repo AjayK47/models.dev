@@ -1,0 +1,19 @@
+# `none` is not published: only 3 of 5 routes accept it, so it would be
+# normalized away rather than disabling thinking. The graded values are the tiers
+# Concentrate declares for this model, not measured reasoning budgets.
+# `max` is declared in the list capabilities but no route reports
+# support for it, so it is omitted.
+# https://concentrate.ai/models/kimi-k2-7-code
+base_model = "moonshotai/kimi-k2.7-code"
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh"]
+
+[cost]
+input = 0.68
+output = 3.4
+cache_read = 0.136
+
+[modalities]
+input = ["text", "image", "pdf"]

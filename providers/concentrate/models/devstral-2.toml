@@ -1,0 +1,18 @@
+# Concentrate reports max_input_tokens = 256_000 for this ID and its single mistral route reports the same window.
+# The override records the window this gateway actually serves, which differs
+# from the lab ceiling.
+# https://concentrate.ai/models/devstral-2
+base_model = "mistral/devstral-2512"
+attachment = true
+structured_output = true
+
+[cost]
+input = 0.4
+output = 2
+
+[limit]
+context = 256_000
+output = 32_000
+
+[modalities]
+input = ["text", "pdf"]

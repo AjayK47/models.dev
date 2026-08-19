@@ -1,0 +1,18 @@
+# Concentrate reports max_input_tokens = 256_000 for this ID and its mistral route reports the same window, while the bedrock route
+# caps lower at 128k.
+# The override records the window this gateway actually serves, which differs
+# from the lab ceiling.
+# https://concentrate.ai/models/mistral-large-3
+base_model = "mistral/mistral-large-2512"
+structured_output = true
+
+[cost]
+input = 0.5
+output = 1.5
+
+[limit]
+context = 256_000
+output = 32_000
+
+[modalities]
+input = ["text", "image", "pdf"]
