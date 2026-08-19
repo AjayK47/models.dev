@@ -1,0 +1,31 @@
+# Concentrate normalizes `reasoning_effort` over Z.ai's thinking API. Live probes
+# on 2026-08-19 confirmed this model always reasons; no route-wide off switch is exposed,
+# while every graded level returns reasoning. Repeated runs did not show a stable
+# ordering between the graded levels, so they are published as the tiers this
+# gateway accepts rather than as measured reasoning budgets.
+# `none` is omitted: only the deepinfra route accepts it, so on the bedrock and
+# cloudflare routes it would be normalized away rather than disabling thinking.
+# `xhigh` and `max` are accepted but not published: live probes on 2026-08-19 with
+# an identical prompt produced reasoning lengths of 35_248-38_871 characters at
+# high, 31_337-40_861 at xhigh and 32_270-45_166 at max -- fully overlapping, so
+# the gateway normalizes them rather than honouring a higher tier. This matches
+# the lab and peer surface of low|medium|high.
+# https://concentrate.ai/models/glm-4.7-flash
+base_model = "zhipuai/glm-4.7-flash"
+attachment = true
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high"]
+
+[cost]
+input = 0.06
+output = 0.4
+cache_read = 0.01
+
+[limit]
+context = 202_752
+
+[modalities]
+input = ["text", "pdf"]

@@ -1,0 +1,27 @@
+# Concentrate normalizes `reasoning_effort` over Z.ai's thinking API. Live probes
+# on 2026-08-19 confirmed `none` returns an empty reasoning payload, so thinking is genuinely off,
+# while every graded level returns reasoning. Repeated runs did not show a stable
+# ordering between the graded levels, so they are published as the tiers this
+# gateway accepts rather than as measured reasoning budgets.
+# `minimal` is omitted: the list capabilities do not declare it for this model,
+# even though some individual upstream routes accept the value.
+# https://concentrate.ai/models/glm-4.7
+base_model = "zhipuai/glm-4.7"
+attachment = true
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.4
+output = 1.75
+cache_read = 0.08
+
+[limit]
+context = 202_752
+output = 128_000
+
+[modalities]
+input = ["text", "pdf"]
