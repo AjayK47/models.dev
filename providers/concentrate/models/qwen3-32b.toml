@@ -1,0 +1,21 @@
+# `none` is not published: only 1 of 2 routes accept it,
+# so it would be normalized away rather than disabling thinking. The graded values
+# are the tiers Concentrate declares for this model, not measured budgets.
+# https://concentrate.ai/models/qwen3-32b
+base_model = "alibaba/qwen3-32b"
+attachment = true
+structured_output = true
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh", "max"]
+
+[cost]
+input = 0.08
+output = 0.28
+
+[limit]
+context = 40_960
+
+[modalities]
+input = ["text", "pdf"]

@@ -1,0 +1,20 @@
+# Live probes on 2026-08-19 confirmed `none` returns an empty reasoning payload, so
+# thinking is genuinely off, while the graded levels return reasoning. The graded
+# values are the tiers Concentrate declares for this model, not measured budgets.
+# https://concentrate.ai/models/qwen3.6-plus
+base_model = "alibaba/qwen3.6-plus"
+structured_output = false
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "medium"]
+
+[cost]
+input = 0.276
+output = 1.651
+
+[limit]
+output = 64_000
+
+[modalities]
+input = ["text", "image", "pdf"]
